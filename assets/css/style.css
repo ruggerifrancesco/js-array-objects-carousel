@@ -32,6 +32,11 @@ img {
 .carousel-item {
     width: 100%;
     height: 100%;
+    display: none;
+}
+
+.active-frame {
+    display: block;
 }
 
 #prevButton, #nextButton {
