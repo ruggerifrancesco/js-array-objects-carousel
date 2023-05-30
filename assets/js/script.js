@@ -1,13 +1,5 @@
 console.log('JS LOADED!');
 
-// Milestone 0: DONEEEEEEEEEEEE
-// Come nel primo carosello realizzato, focalizziamoci prima sulla creazione del 
-// markup statico: costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
-
-// Milestone 1: Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
-// Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà 
-// visibile e dovremo aggiungervi titolo e testo.
-
 // Milestone 2:
 // Aggiungere il ciclo infinito del carosello. Ovvero se la miniatura attiva è la prima e l'utente clicca la 
 // freccia verso l'alto, la miniatura che deve attivarsi sarà l'ultima e viceversa per l'ultima miniatura se l'utente 
@@ -38,9 +30,9 @@ const images = [
 ];
 
 const carouselContainer = document.getElementById('carouselArrayContainer');
-const prevArrow = document.getElementById('prevButton');
-const nextArrow = document.getElementById('nextButton');
-const carouselItems = document.querySelectorAll('.carousel-item');
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
+let carouselItems = document.querySelectorAll('.carousel-item');
 
 // Keeps track of the currently active image index
 let activeIndex = 0;
@@ -65,30 +57,23 @@ images.forEach((item, index) => {
     carouselContainer.appendChild(carouselItem);
 });
 
-/**
- * Updates the active frame in the carousel based on 
- * the provided active index.
- *
- * @param activeIndex - The index of the active frame.
- */
-function updateActiveFrame(activeIndex) {
-    carouselItems.forEach((item, index) => {
-      if (index === activeIndex) {
-        item.classList.add('active-frame');
-      } else {
-        item.classList.remove('active-frame');
-      }
-    });
-  }
+// Update carouselItems array after adding items dynamically
+carouselItems = document.querySelectorAll('.carousel-item');
 
-prevArrow.addEventListener('click', () => {
-    // Calculate the new active index for the previous slide
+// Event listener for the previous button
+prevButton.addEventListener('click', () => {
+    // Remove the 'active-frame' class from the current active item
+    carouselItems[activeIndex].classList.remove('active-frame');
+    // Update the active index to the previous index in a circular manner
     activeIndex = (activeIndex - 1 + carouselItems.length) % carouselItems.length;
-    updateActiveFrame(activeIndex);
-});
-
-nextArrow.addEventListener('click', 
-    () => {
-    
-});
-
+    // Add the 'active-frame' class to the new active item based on the updated index
+    carouselItems[activeIndex].classList.add('active-frame');
+  });
+  
+  // Event listener for the next button
+  nextButton.addEventListener('click', () => {
+    carouselItems[activeIndex].classList.remove('active-frame');
+    // Update the active index to the next index in a circular manner
+    activeIndex = (activeIndex + 1) % carouselItems.length;
+    carouselItems[activeIndex].classList.add('active-frame');
+  });
