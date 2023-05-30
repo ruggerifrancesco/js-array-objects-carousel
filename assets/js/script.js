@@ -38,8 +38,8 @@ const images = [
 ];
 
 const carouselContainer = document.getElementById('carouselArrayContainer');
-const prevArrow = document.querySelector('.my_carousel-container::before');
-const nextArrow = document.querySelector('.my_carousel-container::after');
+const prevArrow = document.getElementById('prevButton');
+const nextArrow = document.getElementById('nextButton');
 const carouselItems = document.querySelectorAll('.carousel-item');
 
 // Keeps track of the currently active image index
@@ -84,7 +84,7 @@ function updateActiveFrame(activeIndex) {
 prevArrow.addEventListener('click', () => {
     // Calculate the new active index for the previous slide
     activeIndex = (activeIndex - 1 + carouselItems.length) % carouselItems.length;
-    updateActiveFrame();
+    updateActiveFrame(activeIndex);
 });
 
 nextArrow.addEventListener('click', 
