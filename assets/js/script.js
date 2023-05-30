@@ -38,3 +38,12 @@ const images = [
 ];
 
 const carouselContainer = document.getElementById('carouselArrayContainer');
+
+images.forEach((item, index) => {
+    // Create carousel item container
+    const carouselItem = document.createElement('div');
+    carouselItem.classList.add('carousel-item');
+    if (index === 0) {
+      carouselItem.classList.add('active-frame');
+    }
+});
