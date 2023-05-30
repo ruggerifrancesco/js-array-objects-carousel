@@ -61,3 +61,14 @@ images.forEach((item, index) => {
     // Append carousel item container to carousel container
     carouselContainer.appendChild(carouselItem);
 });
+
+prevArrow.addEventListener('click', 
+    () => {
+
+});
+
+nextArrow.addEventListener('click', 
+    () => {
+    
+});
+
