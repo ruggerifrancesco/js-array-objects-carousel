@@ -65,14 +65,20 @@ images.forEach((item, index) => {
 });
 
 /**
- * Updates the active frame in the carousel based on the provided active index.
+ * Updates the active frame in the carousel based on 
+ * the provided active index.
  *
- * @param {number} activeIndex - The index of the active frame.
- * @param {HTMLElement} item - The carousel item to update.
+ * @param activeIndex - The index of the active frame.
  */
-function updateActiveFrame(activeIndex, item) {
-
-}
+function updateActiveFrame(activeIndex) {
+    carouselItems.forEach((item, index) => {
+      if (index === activeIndex) {
+        item.classList.add('active-frame');
+      } else {
+        item.classList.remove('active-frame');
+      }
+    });
+  }
 
 prevArrow.addEventListener('click', 
     () => {
