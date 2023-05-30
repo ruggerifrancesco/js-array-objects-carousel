@@ -43,7 +43,7 @@ images.forEach((item, index) => {
     // Create image element
     const imageCarousel = document.createElement('img');
     imageCarousel.src = `assets/${item.image}`;
-    imageCarousel.alt = '';
+    imageCarousel.alt = item.title;
     
     // Append image to carousel item container
     carouselItem.appendChild(imageCarousel);
