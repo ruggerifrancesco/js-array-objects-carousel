@@ -40,6 +40,7 @@ const images = [
 const carouselContainer = document.getElementById('carouselArrayContainer');
 const prevArrow = document.querySelector('.my_carousel-container::before');
 const nextArrow = document.querySelector('.my_carousel-container::after');
+const carouselItems = document.querySelectorAll('.carousel-item');
 
 // Keeps track of the currently active image index
 let activeIndex = 0;
