@@ -46,4 +46,15 @@ images.forEach((item, index) => {
     if (index === 0) {
       carouselItem.classList.add('active-frame');
     }
+
+    // Create image element
+    const imageCarousel = document.createElement('img');
+    imageCarousel.src = `assets/${item.image}`;
+    imageCarousel.alt = '';
+    
+    // Append image to carousel item container
+    carouselItem.appendChild(imageCarousel);
+    
+    // Append carousel item container to carousel container
+    carouselContainer.appendChild(carouselItem);
 });
