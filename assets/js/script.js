@@ -81,9 +81,10 @@ function updateActiveFrame(activeIndex) {
     });
   }
 
-prevArrow.addEventListener('click', 
-    () => {
-
+prevArrow.addEventListener('click', () => {
+    // Calculate the new active index for the previous slide
+    activeIndex = (activeIndex - 1 + carouselItems.length) % carouselItems.length;
+    updateActiveFrame();
 });
 
 nextArrow.addEventListener('click', 
