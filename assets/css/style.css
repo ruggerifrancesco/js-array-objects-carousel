@@ -55,7 +55,7 @@ img {
 }
 
 .active-frame-label {
-    outline: 3px solid yellow;
+    outline: 4px solid rgb(255, 255, 0);
 }
 
 #prevButton, #nextButton {
