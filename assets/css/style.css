@@ -46,6 +46,8 @@ img {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .my_carousel-container::before {
@@ -64,4 +66,9 @@ img {
     padding-right: 1rem;
     transform: translate(0, -50%);
     border-radius: 30% 0 0 30%;
+}
+
+.my_carousel-container:hover::before,
+.my_carousel-container:hover::after {
+    opacity: 1; /* Change opacity to 1 on hover */
 }
