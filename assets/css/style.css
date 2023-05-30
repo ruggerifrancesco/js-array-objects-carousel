@@ -34,15 +34,12 @@ img {
     height: 100%;
 }
 
-.my_carousel-container::before,
-.my_carousel-container::after {
+#prevButton, #nextButton {
     width: 60px;
     height: 60px;
     position: absolute;
     background-color: white;
     cursor: pointer;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,25 +48,23 @@ img {
     transition: opacity 0.3s ease;
 }
 
-.my_carousel-container::before {
-    content: '\f100';
+#prevButton {
     top: 50%;
     left: 0;
     padding-left: 1rem;
-    transform: translate(0, -50%);
+    transform: translateY(-50%);
     border-radius: 0 30% 30% 0;
 }
 
-.my_carousel-container::after {
-    content: '\f101';
+#nextButton {
     top: 50%;
     right: 0;
     padding-right: 1rem;
-    transform: translate(0, -50%);
+    transform: translateY(-50%);
     border-radius: 30% 0 0 30%;
 }
 
-.my_carousel-container:hover::before,
-.my_carousel-container:hover::after {
+.my_carousel-container:hover #prevButton,
+.my_carousel-container:hover #nextButton {
     opacity: 1; /* Change opacity to 1 on hover */
 }
