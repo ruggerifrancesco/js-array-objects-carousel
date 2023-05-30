@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 body {
     background-color: azure;
@@ -35,7 +35,6 @@ img {
     display: none;
 }
 
-
 .my_carousel-label {
     width: 100%;
     display: flex;
@@ -48,10 +47,15 @@ img {
     height: 160px;
     border-radius: 0.3rem;
     box-shadow: 5px 10px 18px #888888;
+    overflow: hidden;
 }
 
 .active-frame {
     display: block;
+}
+
+.active-frame-label {
+    outline: 3px solid yellow;
 }
 
 #prevButton, #nextButton {

@@ -25,6 +25,7 @@ const images = [
 ];
 
 const carouselContainer = document.getElementById('carouselArrayContainer');
+const carouselContainerLabels = document.getElementById('carouselArrayLabel');
 const prevButton = document.getElementById('prevButton');
 const nextButton = document.getElementById('nextButton');
 let carouselItems = document.querySelectorAll('.carousel-item');
@@ -32,24 +33,37 @@ let carouselItems = document.querySelectorAll('.carousel-item');
 // Keeps track of the currently active image index
 let activeIndex = 0;
 
+// Function Create image element
+function createImageElement(src, alt) {
+    const imageElement = document.createElement('img');
+    imageElement.src = src;
+    imageElement.alt = alt;
+
+    return imageElement;
+}
+
 images.forEach((item, index) => {
     // Create carousel item container
     const carouselItem = document.createElement('div');
+    const carouselItemLabel = document.createElement('div');
+
     carouselItem.classList.add('carousel-item');
+    carouselItemLabel.classList.add('carousel-item-label');
     if (index === 0) {
       carouselItem.classList.add('active-frame');
+      carouselItemLabel.classList.add('active-frame-label');
     }
 
-    // Create image element
-    const imageCarousel = document.createElement('img');
-    imageCarousel.src = `assets/${item.image}`;
-    imageCarousel.alt = item.title;
+    const imageCarousel = createImageElement(`assets/${item.image}`, item.title);
+    const imageCarouselLabel = createImageElement(`assets/${item.image}`, item.title);
     
     // Append image to carousel item container
     carouselItem.appendChild(imageCarousel);
+    carouselItemLabel.appendChild(imageCarouselLabel);
     
     // Append carousel item container to carousel container
     carouselContainer.appendChild(carouselItem);
+    carouselContainerLabels.appendChild(carouselItemLabel);
 });
 
 // Update carouselItems array after adding items dynamically
