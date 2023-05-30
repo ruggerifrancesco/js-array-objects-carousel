@@ -41,6 +41,9 @@ const carouselContainer = document.getElementById('carouselArrayContainer');
 const prevArrow = document.querySelector('.my_carousel-container::before');
 const nextArrow = document.querySelector('.my_carousel-container::after');
 
+// Keeps track of the currently active image index
+let activeIndex = 0;
+
 
 images.forEach((item, index) => {
     // Create carousel item container
