@@ -38,6 +38,9 @@ const images = [
 ];
 
 const carouselContainer = document.getElementById('carouselArrayContainer');
+const prevArrow = document.querySelector('.my_carousel-container::before');
+const nextArrow = document.querySelector('.my_carousel-container::after');
+
 
 images.forEach((item, index) => {
     // Create carousel item container
