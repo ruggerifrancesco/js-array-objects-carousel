@@ -44,7 +44,6 @@ const nextArrow = document.querySelector('.my_carousel-container::after');
 // Keeps track of the currently active image index
 let activeIndex = 0;
 
-
 images.forEach((item, index) => {
     // Create carousel item container
     const carouselItem = document.createElement('div');
@@ -64,6 +63,16 @@ images.forEach((item, index) => {
     // Append carousel item container to carousel container
     carouselContainer.appendChild(carouselItem);
 });
+
+/**
+ * Updates the active frame in the carousel based on the provided active index.
+ *
+ * @param {number} activeIndex - The index of the active frame.
+ * @param {HTMLElement} item - The carousel item to update.
+ */
+function updateActiveFrame(activeIndex, item) {
+
+}
 
 prevArrow.addEventListener('click', 
     () => {
