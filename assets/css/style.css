@@ -106,8 +106,8 @@ p {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    /* opacity: 0; */
+    /* transition: opacity 0.3s ease; */
     z-index: 4;
 }
 
@@ -125,7 +125,7 @@ p {
     transform: translateY(-50%);
 }
 
-.my_carousel-container:hover #prevButton,
-.my_carousel-container:hover #nextButton {
-    opacity: 1; /* Change opacity to 1 on hover */
-}
+/* .my_carousel-container:hover #prevButton, */
+/* .my_carousel-container:hover #nextButton { */
+    /* opacity: 1; Change opacity to 1 on hover */
+/* } */
