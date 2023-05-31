@@ -80,3 +80,16 @@ images.forEach((item, index) => {
 // Update carouselItems array after adding items dynamically
 carouselItems = document.querySelectorAll('.carousel-item');
 
+// Function to switch the carousel items (main and thumbnail section)
+function updateActiveItem(index) {
+    // Remove the 'active-frame' class from the current active item
+    carouselItems[activeIndex].classList.remove('active-frame');
+    carouselContainerThumbnails.children[activeIndex].classList.remove('active-frame-thumbnail');
+  
+    // Update the active index to the new index
+    activeIndex = index;
+  
+    // Add the 'active-frame' class to the new active item based on the updated index
+    carouselItems[activeIndex].classList.add('active-frame');
+    carouselContainerThumbnails.children[activeIndex].classList.add('active-frame-thumbnail');
+  }
