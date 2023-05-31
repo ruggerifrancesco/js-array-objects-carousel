@@ -95,15 +95,22 @@ function updateActiveItem(index) {
   }
 
 // Event Listener for thumbnail items
+carouselContainerThumbnails.addEventListener ('click', 
+    (event) => {
+
+}
+)
 
 // Event listener for the previous button
-prevButton.addEventListener('click', () => {
+prevButton.addEventListener('click', 
+    () => {
     const previousIndex = (activeIndex - 1 + carouselItems.length) % carouselItems.length;
     updateActiveItem(previousIndex);
   });
   
 // Event listener for the next button
-nextButton.addEventListener('click', () => {
+nextButton.addEventListener('click', 
+    () => {
   const nextIndex = (activeIndex + 1) % carouselItems.length;
   updateActiveItem(nextIndex);
 });
