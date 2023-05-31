@@ -44,9 +44,12 @@ images.forEach((item, index) => {
     // Create carousel item container
     const carouselItem = document.createElement('div');
     const carouselItemLabel = document.createElement('div');
+    const carouselInShadow = document.createElement('div');
 
     carouselItem.classList.add('carousel-item');
     carouselItemLabel.classList.add('carousel-item-label');
+    carouselInShadow.classList.add('carousel-inner-shadow');
+    
     if (index === 0) {
       carouselItem.classList.add('active-frame');
       carouselItemLabel.classList.add('active-frame-label');
@@ -55,8 +58,9 @@ images.forEach((item, index) => {
     const imageCarousel = createImageElement(`assets/${item.image}`, item.title);
     const imageCarouselLabel = createImageElement(`assets/${item.image}`, item.title);
     
-    // Append image to carousel item container
+    // Append image - shadow and img at the labels
     carouselItem.appendChild(imageCarousel);
+    carouselItem.appendChild(carouselInnerShadow);
     carouselItemLabel.appendChild(imageCarouselLabel);
     
     // Append carousel item container to carousel container
