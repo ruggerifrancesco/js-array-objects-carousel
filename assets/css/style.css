@@ -80,13 +80,12 @@ p {
 }
 
 .active-frame-label {
-    outline: 4px solid red;
+    outline: 3px solid red;
 }
 
 .carousel-inner-shadow {
     background: linear-gradient(180deg, rgba(255,255,255,0) 45%, rgba(3,3,3,1) 100%);
     z-index: 2;
-    outline: 1px solid red;
     position: absolute;
     top: 0;
     left: 0;
