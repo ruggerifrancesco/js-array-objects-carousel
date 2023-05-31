@@ -33,6 +33,7 @@ img {
     width: 100%;
     height: 100%;
     display: none;
+    position: relative;
 }
 
 .my_carousel-label {
@@ -59,7 +60,14 @@ img {
 }
 
 .carousel-inner-shadow {
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(59,58,58,1) 95%);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 45%, rgba(3,3,3,1) 100%);
+    z-index: 2;
+    outline: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 #prevButton, #nextButton {
@@ -75,6 +83,7 @@ img {
     font-size: 2rem;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 4;
 }
 
 #prevButton {
