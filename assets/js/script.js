@@ -97,8 +97,11 @@ function updateActiveItem(index) {
 // Event Listener for thumbnail items
 carouselContainerThumbnails.addEventListener ('click', 
     (event) => {
-
-}
+        const thumbnailIndex = Array.from(carouselContainerThumbnails.children).indexOf(event.target.parentNode);
+        if (thumbnailIndex !== -1) {
+          updateActiveItem(thumbnailIndex);
+        }
+    }
 )
 
 // Event listener for the previous button
