@@ -60,7 +60,7 @@ images.forEach((item, index) => {
     
     // Append image - shadow and img at the labels
     carouselItem.appendChild(imageCarousel);
-    carouselItem.appendChild(carouselInnerShadow);
+    carouselItem.appendChild(carouselInShadow);
     carouselItemLabel.appendChild(imageCarouselLabel);
     
     // Append carousel item container to carousel container
