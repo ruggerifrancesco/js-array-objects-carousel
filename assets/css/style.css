@@ -60,14 +60,14 @@ p {
     position: relative;
 }
 
-.my_carousel-label {
+.my_carousel-thumbnail {
     width: 100%;
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
 }
 
-.carousel-item-label {
+.carousel-item-thumbnail {
     width: calc(100% / 5);
     height: 140px;
     border-radius: 0.5rem;
@@ -79,7 +79,7 @@ p {
     display: block;
 }
 
-.active-frame-label {
+.active-frame-thumbnail {
     outline: 3px solid red;
 }
 

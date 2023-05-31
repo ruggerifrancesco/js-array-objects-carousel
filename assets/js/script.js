@@ -23,7 +23,7 @@ const images = [
 ];
 
 const carouselContainer = document.getElementById('carouselArrayContainer');
-const carouselContainerLabels = document.getElementById('carouselArrayLabel');
+const carouselContainerThumbnails = document.getElementById('carouselArrayThumbnail');
 const prevButton = document.getElementById('prevButton');
 const nextButton = document.getElementById('nextButton');
 let carouselItems = document.querySelectorAll('.carousel-item');
@@ -43,27 +43,27 @@ function createImageElement(src, alt) {
 images.forEach((item, index) => {
     // Create carousel item container
     const carouselItem = document.createElement('div');
-    const carouselItemLabel = document.createElement('div');
+    const carouselItemThumbnails = document.createElement('div');
     const carouselInShadow = document.createElement('div');
     const carouselTitle = document.createElement('h1');
     const carouselParagraph = document.createElement('p');
 
     carouselItem.classList.add('carousel-item');
-    carouselItemLabel.classList.add('carousel-item-label');
+    carouselItemThumbnails.classList.add('carousel-item-thumbnail');
     carouselInShadow.classList.add('carousel-inner-shadow');
     
     if (index === 0) {
       carouselItem.classList.add('active-frame');
-      carouselItemLabel.classList.add('active-frame-label');
+      carouselItemThumbnails.classList.add('active-frame-thumbnail');
     }
 
     const imageCarousel = createImageElement(`assets/${item.image}`, item.title);
-    const imageCarouselLabel = createImageElement(`assets/${item.image}`, item.title);
+    const imageCarouselThumbnail = createImageElement(`assets/${item.image}`, item.title);
     
     // Append image - shadow and img at the labels
     carouselItem.appendChild(imageCarousel);
     carouselItem.appendChild(carouselInShadow);
-    carouselItemLabel.appendChild(imageCarouselLabel);
+    carouselItemThumbnails.appendChild(imageCarouselThumbnail);
 
     // Title and paragraph Append
     carouselItem.appendChild(carouselTitle);
@@ -74,7 +74,7 @@ images.forEach((item, index) => {
     
     // Append carousel item container to carousel container
     carouselContainer.appendChild(carouselItem);
-    carouselContainerLabels.appendChild(carouselItemLabel);
+    carouselContainerThumbnails.appendChild(carouselItemThumbnails);
 });
 
 // Update carouselItems array after adding items dynamically
@@ -84,24 +84,24 @@ carouselItems = document.querySelectorAll('.carousel-item');
 prevButton.addEventListener('click', () => {
     // Remove the 'active-frame' class from the current active item
     carouselItems[activeIndex].classList.remove('active-frame');
-    carouselContainerLabels.children[activeIndex].classList.remove('active-frame-label');
+    carouselContainerThumbnails.children[activeIndex].classList.remove('active-frame-thumbnail');
 
     // Update the active index to the previous index in a circular manner
     activeIndex = (activeIndex - 1 + carouselItems.length) % carouselItems.length;
 
     // Add the 'active-frame' class to the new active item based on the updated index
     carouselItems[activeIndex].classList.add('active-frame');
-    carouselContainerLabels.children[activeIndex].classList.add('active-frame-label');
+    carouselContainerThumbnails.children[activeIndex].classList.add('active-frame-thumbnail');
   });
   
   // Event listener for the next button
   nextButton.addEventListener('click', () => {
     carouselItems[activeIndex].classList.remove('active-frame');
-    carouselContainerLabels.children[activeIndex].classList.remove('active-frame-label');
+    carouselContainerThumbnails.children[activeIndex].classList.remove('active-frame-thumbnail');
 
     // Update the active index to the next index in a circular manner
     activeIndex = (activeIndex + 1) % carouselItems.length;
 
     carouselItems[activeIndex].classList.add('active-frame');
-    carouselContainerLabels.children[activeIndex].classList.add('active-frame-label');
+    carouselContainerThumbnails.children[activeIndex].classList.add('active-frame-thumbnail');
   });
