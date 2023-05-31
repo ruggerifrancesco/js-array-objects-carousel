@@ -74,6 +74,7 @@ p {
     box-shadow: 5px 10px 18px #888888;
     overflow: hidden;
     cursor: pointer;
+    filter: brightness(25%);
 }
 
 .active-frame {
@@ -81,7 +82,7 @@ p {
 }
 
 .active-frame-thumbnail {
-    outline: 3px solid red;
+    filter: brightness(1);
 }
 
 .carousel-inner-shadow {
