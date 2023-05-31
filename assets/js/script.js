@@ -80,28 +80,3 @@ images.forEach((item, index) => {
 // Update carouselItems array after adding items dynamically
 carouselItems = document.querySelectorAll('.carousel-item');
 
-// Event listener for the previous button
-prevButton.addEventListener('click', () => {
-    // Remove the 'active-frame' class from the current active item
-    carouselItems[activeIndex].classList.remove('active-frame');
-    carouselContainerThumbnails.children[activeIndex].classList.remove('active-frame-thumbnail');
-
-    // Update the active index to the previous index in a circular manner
-    activeIndex = (activeIndex - 1 + carouselItems.length) % carouselItems.length;
-
-    // Add the 'active-frame' class to the new active item based on the updated index
-    carouselItems[activeIndex].classList.add('active-frame');
-    carouselContainerThumbnails.children[activeIndex].classList.add('active-frame-thumbnail');
-  });
-  
-  // Event listener for the next button
-  nextButton.addEventListener('click', () => {
-    carouselItems[activeIndex].classList.remove('active-frame');
-    carouselContainerThumbnails.children[activeIndex].classList.remove('active-frame-thumbnail');
-
-    // Update the active index to the next index in a circular manner
-    activeIndex = (activeIndex + 1) % carouselItems.length;
-
-    carouselItems[activeIndex].classList.add('active-frame');
-    carouselContainerThumbnails.children[activeIndex].classList.add('active-frame-thumbnail');
-  });
