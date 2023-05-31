@@ -28,7 +28,7 @@ h1 {
     color: white;
     z-index: 5;
     position: absolute;
-    bottom: 15%;
+    bottom: 18%;
     left: 3rem;
     font-size: 3rem;
     font-family: 'Bebas Neue', sans-serif;
@@ -38,10 +38,11 @@ p {
     color: white;
     z-index: 5;
     position: absolute;
-    bottom: 10%;
+    bottom: 8%;
     left: 3rem;
     font-size: 1.2rem;
     font-family: 'Exo 2', sans-serif;
+    width: 40%;
 }
 
 .my_carousel-container {
