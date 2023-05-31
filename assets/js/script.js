@@ -94,6 +94,8 @@ function updateActiveItem(index) {
     carouselContainerThumbnails.children[activeIndex].classList.add('active-frame-thumbnail');
   }
 
+// Event Listener for thumbnail items
+
 // Event listener for the previous button
 prevButton.addEventListener('click', () => {
     const previousIndex = (activeIndex - 1 + carouselItems.length) % carouselItems.length;
