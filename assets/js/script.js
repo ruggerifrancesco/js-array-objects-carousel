@@ -45,6 +45,8 @@ images.forEach((item, index) => {
     const carouselItem = document.createElement('div');
     const carouselItemLabel = document.createElement('div');
     const carouselInShadow = document.createElement('div');
+    const carouselTitle = document.createElement('h1');
+    const carouselParagraph = document.createElement('p');
 
     carouselItem.classList.add('carousel-item');
     carouselItemLabel.classList.add('carousel-item-label');
@@ -62,6 +64,13 @@ images.forEach((item, index) => {
     carouselItem.appendChild(imageCarousel);
     carouselItem.appendChild(carouselInShadow);
     carouselItemLabel.appendChild(imageCarouselLabel);
+
+    // Title and paragraph Append
+    carouselItem.appendChild(carouselTitle);
+    carouselTitle.textContent = item.title;
+
+    carouselItem.appendChild(carouselParagraph);
+    carouselParagraph.textContent= item.text;
     
     // Append carousel item container to carousel container
     carouselContainer.appendChild(carouselItem);

@@ -21,6 +21,25 @@ img {
     object-position: center;
 }
 
+/* NOTE: This is a general tag, be careful with changes */
+h1 {
+    color: white;
+    z-index: 5;
+    position: absolute;
+    bottom: 20%;
+    left: 3rem;
+    font-size: 2rem;
+}
+
+p {
+    color: white;
+    z-index: 5;
+    position: absolute;
+    bottom: 10%;
+    left: 3rem;
+    font-size: 1.2rem;
+}
+
 .my_carousel-container {
     height: 800px;
     width: 1600px;
